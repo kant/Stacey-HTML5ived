@@ -1,0 +1,10 @@
+if $pdf do
+<section class="pdf">
+	<strong>PDFs</strong>
+	<ul>
+	foreach $pdf do 
+		<li><a href="@url">@name</a></li>
+	endforeach
+	</ul>
+</section>
+endif

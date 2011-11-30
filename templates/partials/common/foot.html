@@ -1,0 +1,22 @@
+	</section> <!-- end #content -->
+
+	:navigation
+
+	<footer id="site-footer">
+		<h2>Site Notes</h2>
+		<ul>
+			if @email do <li id="site-email">@email</li> endif
+			<li id="copyright">&copy; Copyright @name @current_year</li>
+			<li id="rss"><a class="atom-rss" href="@root_path/?/feed/">RSS</a></li>
+			<li id="cms_attribution">Content managed by <a href="http://www.staceyapp.com">stacey</a></li>
+		</ul>
+	</footer>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script> <!-- Load jQuery via Google CDN; fall back to local copy if necessary -->
+	<script>window.jQuery || document.write("<script src='@root_path/public/docs/js/jquery-1.6.4.min.js'>\x3C/script>")</script>
+	<script src="@root_path/public/docs/js/gallery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="@root_path/public/docs/js/init-gallery.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if lte IE 6]><script type="text/javascript" src="@root_path/public/docs/js/selectivizr-1.0.2.min.js"></script><![endif]--> <!-- Add CSS3 pseudo-class selector emulation for IE 6-8 -->
+	<script src="@root_path/public/docs/js/site.js?d=20110101"></script>
+</body>
+</html>

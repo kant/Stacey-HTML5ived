@@ -1,0 +1,11 @@
+<nav id="site-navigation">
+	<h1>Site Navigation</h1>
+	<ul>
+		foreach $root do
+		<li>
+			<a href="@url">@title</a>
+			:children
+		</li>
+		endforeach
+	</ul>
+</nav>

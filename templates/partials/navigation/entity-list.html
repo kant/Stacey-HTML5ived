@@ -1,0 +1,12 @@
+if $children do
+	<h1 id="entity-list-heading">@content_entitys</h1>
+	<ul class="entities">
+		foreach $children do
+		<li>
+			if @thumb do <img src="@thumb" class="entity-thumb" alt=""> endif
+			<a href="@url">@title</a>
+			if @date do <span class="separator"> &middot; </span><em class="date">@date</em> endif
+		</li>
+		endforeach
+	</ul>
+endif

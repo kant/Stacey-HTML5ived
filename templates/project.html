@@ -1,0 +1,37 @@
+
+:head
+
+	<h1 id="content-heading">@title</h1>
+
+	if @date do
+	<p class="date"><em>@date</em></p>
+	endif
+	
+	<div class="content-primary">
+		@content
+	</div> <!-- end .content-primary -->
+
+	<div class="content-secondary">
+		
+		<section id="media-gallery">
+			<h1>@content_entity Gallery</h1>
+			<p id="gallery-count"><em>&#8470;</em> <span>1/1</span></p>
+			<div id="gallery-navigation">
+				<p><span id="next-image">Next&nbsp;Image</span>&nbsp;&rarr;</p>
+				<p><span id="previous-image">Previous&nbsp;Image</span>&nbsp;&larr;</p>
+			</div>
+			:media
+		</section>
+
+		<nav id="entity-navigation">
+			<h1>@content_entity Navigation</h1>
+			<p id="entity-count"><em>&#8470;</em> @index/@siblings_count</p>
+			if $siblings do
+			:next-page
+			:previous-page
+			endif
+		</nav>
+
+	</div> <!-- end .content-secondary -->
+
+:foot

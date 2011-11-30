@@ -1,0 +1,413 @@
+// ---------------------------------------------------------------------------
+/* SiteDomainName.com Style Sheet - SCREEN */
+// ---------------------------------------------------------------------------
+
+// Content
+// ===========================================================================
+//  =Imports
+//  =Colors
+//  =Variables
+//  =Mix-Ins
+//  =Base Elements
+//  =Page Layout
+//  =Content
+//  =Navigation
+//  =Miscellaneous
+
+
+// =Imports
+// ===========================================================================
+
+@import "compass"
+@import "normalize"
+
+
+// =Colors
+// ===========================================================================
+
+$site_color_1:				#999999
+$site_color_2:				#222222
+$site_color_3:				#DDDDDD
+
+$black: 					hsl(50,5%,0)
+$gray_darker:				lighten($black, 20%) 
+$gray_dark:					lighten($black, 40%) 
+$gray:						lighten($black, 60%) 
+$gray_light:				lighten($black, 75%) 
+$gray_lighter:				lighten($black, 90%) 
+$white:						lighten($black, 100%)
+
+$link_default:				$site_color_1
+$link_visited: 				darken($site_color_1, 10%)
+$link_hover: 				lighten($site_color_1, 10%)
+
+
+// =Variables
+// ===========================================================================
+
+$body_width:					860px
+$body_top_padding:				23px
+$body_font_px_value:			13
+$body_line_height:				1.3
+$font-serif:					"Times New Roman", times, serif
+
+// gallery
+$gallery_image_width:			560px		// FIXME: make this fluid / percentage based instead?
+
+// widths (set as percentage of original fixed widths)
+$body_side_margin:				 2.32558%	//  20 ÷ 860
+$site_header_width:				25.58139%	// 220 ÷ 860
+$content_width:					80.81395%	// 695 ÷ 860
+$content_heading_width:			84.60432%	// 588 ÷ 695
+$date_width:					13.66906%   //  95 ÷ 695
+$content_primary_width:			66.18705%	// 460 ÷ 695
+$content_primary_left:			15.53957%	// 108 ÷ 695
+$media_gallery_right:			 3.88489%	//  27 ÷ 695
+$gallery_navigation_width:		39.28571%	// 220 ÷ 560
+$site_footer_left:				29.30233%	// 251 ÷ 860
+$site_navigation_width:			12.79069%	// 110 ÷ 860
+$entity_navigation_left:		47.19424%	// 327 ÷ 695
+$entity_navigation_width:		46.06475%	// 320 ÷ 695
+$entity_navigation_right:		 3.59712%	//  25 ÷ 695
+
+
+// =Mix-Ins
+// ===========================================================================
+
+// headings ------------------------------------------------------------------
+
+@mixin headline_size_1
+	font-size: 2em
+	line-height: 1.2
+	letter-spacing: .02em
+	border-bottom-width: 2px
+.headline_size_1
+	@include headline_size_1
+
+// hidden elements -----------------------------------------------------------
+
+@mixin hidden
+	position: absolute
+	left: 0
+	top: -10000px
+	width: 1px
+	height: 1px
+	overflow: hidden
+.hidden
+	@include hidden
+@mixin hidden_reset
+	position: static !important
+	top: 0 !important
+	width: auto !important
+	height: auto !important
+	overflow: auto !important
+.hidden_reset
+	@include hidden_reset
+
+// links ---------------------------------------------------------------------
+
+@mixin link
+	text-decoration: none
+	border-bottom: 1px solid $link_default
+	color: $site_color_1
+	&:hover
+		cursor: pointer
+.link
+	@include link
+
+// miscellaneous -------------------------------------------------------------
+
+@mixin count
+	position: absolute
+	top: (17/$body_font_px_value)+em
+	left: -10em
+	width: 8em
+	text-align: right
+	em
+		display: block
+		font-style: normal
+		color: $site_color_1
+.count
+	@include count
+
+
+/* SCREEN STYLES
+   (Template Design by Anthony Kolber, Revised CSS by Clayton Farr) */
+
+// =Base Elements
+// ===========================================================================
+
+body
+	font-family: $font-serif
+	line-height: $body_line_height
+#{headings()}
+	font-weight: normal
+	margin:
+		top: 0
+		bottom: .3em
+p, ul, ol, dl, pre, blockquote, form, fieldset, table, details, summary
+	margin:
+		top: 0
+		bottom: (5/$body_font_px_value)+em
+a
+	@extend .link
+	&:visited
+		border-bottom-color: $link_visited
+	&:hover
+		border-bottom-color: $link_hover
+
+
+// =Page Layout
+// ===========================================================================
+
+html
+	color: $site_color_2
+	background: white
+body
+	position: relative
+	max-width: ($body_width/10px)+em
+	padding: $body_top_padding 0
+	margin: 0 auto
+#site-header, #content, #site-navigation, #site-footer
+	font-size: 1.3em
+#site-header, #site-navigation
+	margin-left: $body_side_margin
+
+
+// =Content
+// ===========================================================================
+
+// header --------------------------------------------------------------------
+
+#site-header
+	width: $site_header_width
+	margin-bottom: (43/$body_font_px_value)+em
+	h1
+		font-size: 1em
+		margin-bottom: 0
+		a
+			color: $site_color_2
+#site-tagline
+	color: $site_color_1
+	em
+		font-style: normal
+
+// primary content -----------------------------------------------------------
+
+#content
+	float: right
+	width: $content_width
+	margin:
+		bottom: (45/$body_font_px_value)+em
+		right: $body_side_margin
+#content-heading
+	@extend .headline_size_1
+	float: right
+	width: $content_heading_width
+	margin-bottom: .5em
+.date, .paragraph_mark
+	display: block
+	float: left
+	width: $date_width
+	position: relative
+	left: 0
+	top: 14px
+	font:
+		size: (11/$body_font_px_value)+em
+		style: normal
+	letter-spacing: .03em
+	text-align: right
+	color: $site_color_1
+	em
+		font-style: normal
+	.ie &
+		top: 12px
+.paragraph_mark
+	top: 12px
+	margin: 0
+	.ie &
+		top: 10px
+.content-primary
+	width: $content_primary_width
+	margin-left: $content_primary_left
+	#{headings()}
+		margin-top: .7em
+	h1
+		font-size: (21/$body_font_px_value)+em
+		&:first-of-type, &:first-child, .ie6 &
+			margin-top: .15em
+	h2
+		font-size: (18/$body_font_px_value)+em
+	h3
+		font-size: (15/$body_font_px_value)+em
+	// h4, h5, h6 left at body font-size
+	h4, h5, h6
+		font-weight: bold
+		text-transform: uppercase
+	h5, h6
+		font-style: italic
+		text-transform: capitalize
+	h6
+		font-style: normal
+.image
+	margin-bottom: (10/$body_font_px_value)+em
+#entity-list-heading
+	@extend .hidden
+.entities
+	list-style-type: none
+	padding: 0
+	margin: 0
+	li
+		position: relative
+		margin:
+			bottom: .7em
+			left: $content_primary_left
+		a
+			@extend .headline_size_1
+			display: inline-block
+			color: $site_color_2
+		.number
+			font:
+				family: Georgia, sans-serif
+				size: (18/$body_font_px_value)+em
+			margin:
+				right: .5em
+				left: -2.1em
+			color: $site_color_1
+		.date
+			position: absolute
+			left: $content_primary_left*-1
+		img, .separator
+			display: none
+			
+.pdf
+	margin-top: (22/$body_font_px_value)+em
+	ul
+		list-style-type: none
+		margin: (5/$body_font_px_value)+em 0 0
+		a
+			color: $black
+
+// secondary content ---------------------------------------------------------
+
+.content-secondary
+	position: relative
+#media-gallery
+	position: relative
+	padding-top: (92/$body_font_px_value)+em
+	margin:
+		left: $content_primary_left
+		right: $media_gallery_right
+	h1
+		@extend .hidden
+#image-wrapper
+	width: 100%
+	overflow: hidden
+#image-holder
+	width: 100000000px
+	.image
+		float: left
+		width: $gallery_image_width
+		img
+			width: 100%
+			margin-bottom: 1em
+		em
+			font-style: normal
+			color: $site_color_1
+#gallery-count
+	@extend .count
+#gallery-navigation
+	width: $gallery_navigation_width
+	position: absolute
+	left: 0
+	top: (17/$body_font_px_value)+em
+	overflow: hidden // trim text at narrow screen widths
+	p
+		margin-bottom: (1/$body_font_px_value)+em
+		color: $site_color_1
+	span
+		@extend .link
+		color: $black
+div.video, div.swf
+	margin-bottom: (10/$body_font_px_value)+em
+
+
+// footer --------------------------------------------------------------------
+
+#site-footer
+	margin-left: $site_footer_left
+	clear: both
+	h2
+		@extend .hidden
+	ul
+		@include inline-list
+		line-height: 1.5
+		li
+			margin-right: .5em
+#rss a
+	font-size: (12/$body_font_px_value)+em
+	letter-spacing: .08em
+	padding: 1px 2px
+	color: $site_color_2
+	background-color: $site_color_3
+#cms_attribution
+	display: block !important
+	color: $site_color_1
+	.ie7 &
+		float: left
+#site-email
+	position: absolute
+	top: $body_top_padding
+	left: $site_footer_left
+	line-height: $body_line_height
+
+
+// =Navigation
+// ===========================================================================
+
+#site-navigation
+	width: $site_navigation_width
+	margin-top: 54px
+	.ie8 &
+		margin-top: 52px
+	.ie7 &
+		margin-top: 53px
+	h1
+		@extend .hidden
+	li
+		margin-bottom: .3em
+		a
+			color: $site_color_2
+		li
+			display: none
+#entity-navigation
+	position: absolute
+	top: (17/$body_font_px_value)+em
+	left: $entity_navigation_left
+	width: $entity_navigation_width
+	margin-right: $entity_navigation_right
+	overflow: hidden // trim text at narrow screen widths
+	&.no-gallery
+		left: $content_primary_left
+		width: $content_primary_width
+	h1
+		@extend .hidden
+	p
+		margin-bottom: (1/$body_font_px_value)+em
+		white-space: nowrap
+		a
+			color: $black
+		.separator
+			color: $site_color_1
+#entity-count
+	@extend .count
+	top: 0
+
+
+// =Miscellaneous
+// ===========================================================================
+
+.js // class added to <html> by modernizer if Javascript loaded
+	#entity-count
+		display: none // overridden by inline styles (via JS) in certain contexts
+	
