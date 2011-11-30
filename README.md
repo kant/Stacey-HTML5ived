@@ -8,6 +8,12 @@ The default template (http://template1.staceyapp.com) has been updated to curren
 
 Small deviations have been made from the original layout to align baselines and layouts between pages.
 
+## Demo
+
+Note: Currently installed on sub-domain that is causing **dead links to individual pages**. Main page displays correctly; still need to sort out internal links for demo...
+
+[Template Demonstration](http://stacey.claytonfarr.com/)
+
 ## Updates
 
 * Markup rewritten from ground up in HTML5
