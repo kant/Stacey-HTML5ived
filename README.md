@@ -17,7 +17,7 @@ Note: Currently installed on sub-domain that is causing **dead links to individu
 ## Updates
 
 * Markup rewritten from ground up in HTML5
-* Simplication of templates and partials
+* Simplification of templates and partials
 * CSS rewritten from ground up for new markup
 * Updated JS
 * Fluid, percentage-based layout
