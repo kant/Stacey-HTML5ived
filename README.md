@@ -36,8 +36,6 @@ Replace the *'content'*, *'public'* & *'templates'* folders from the default sta
 
 See [StaceyApp.com](http://staceyapp.com) for the wonderfully simple content management system that this template is designed for.
 
-See [this post](http://claytonfarr.com/notes/stacey-html5ived) for additional details on the creation of this modified template. 
-
 ## Copyright/License
 
 Stacey (Original Template) - Copyright (c) 2009 Anthony Kolber. See `staceyLICENSE` for details.
