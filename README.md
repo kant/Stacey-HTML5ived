@@ -26,11 +26,11 @@ Note: Currently installed on sub-domain that is causing **dead links to individu
  * Note: SASS is not required to use the template as is. Also, the compiled CSS files can be edited to customize the template in place of the SASS masters. However if you haven't given SASS (and Compass, a library of SASS snippets) a look yet you're missing out on one of the best things to hit your CSS toolbox in a while.
 * Utilizes [Modernizr](http://www.modernizr.com) and [Selectivizr](http://selectivizr.com)
 
-For the fastidious, see full details in 'changelog.md'.
+For the fastidious, see full details in `changelog.md`.
 
 ## Installation
 
-Replace the *'content'*, *'public'* & *'templates'* folders from the default stacey installation with the folders from this repo.
+Replace the `content`, `public` & `templates` folders from the default stacey installation with the folders from this repo.
 
 ## Read More
 
